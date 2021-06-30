@@ -11,8 +11,10 @@
     </head>
     <body class="antialiased">
         @include('layouts._partials._sidebar')
-        <div id="app">
-            @yield('main_content')
+        <div class="container">
+            <div id="app">
+                @yield('main_content')
+            </div>
         </div>
         <script src="{{asset('js/app.js')}}"></script>
         @include('layouts._partials._script')

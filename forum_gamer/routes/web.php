@@ -14,5 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('app');
+    return view('pages.home');
 });
+Route::get('/register', function () {
+    return view('pages.register');
+});
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\Page\PageController::class, 'index'])->name('home');
+Route::get('/profile/{id}', [App\Http\Controllers\Page\PageController::class, 'index'])->name('profile');
